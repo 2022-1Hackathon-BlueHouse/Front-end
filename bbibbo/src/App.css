@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.login_button {
+  height: 30px;
+  margin-top: 20px;
+  background-color: rgb(179, 179, 179);
+}
+
+.navbar_Bg{
+  background-color: white;
+  border-bottom: #7A8FC1 3px solid;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+}
+
+.table_title{
+  width: 800px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background-color: #E8E1F3;
+}
+
+.table_content{
+  width: 800px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-bottom: #A8A0C0;
+  text-align: center;
+}
