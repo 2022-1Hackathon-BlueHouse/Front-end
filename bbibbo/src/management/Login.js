@@ -57,6 +57,7 @@ let Login_Button = styled.button`
     outline: 0;
     background-color: #D1CBE4;
     color: white;
+    font-weight: bold;
 
     &:hover{  
         background-color : #A8A0C0;
@@ -120,7 +121,9 @@ function Login(){
                     <br/>
 
                     <Login_Button onClick={()=>{
-                        axios.post('http://172.16.6.42:8090/login',{username : id, password : password})
+                        axios.post('http://172.16.6.42:8090/login',JSON.stringify({username : id, password : password}), {headers: {
+                            'content-type':'application/json'
+                        }})
                         .then((result)=>{})
                         .catch(()=>{})
                     }}>로그인</Login_Button>

@@ -32,6 +32,13 @@ function List(){
                 </thead>
             </table>
 
+
+            <button onClick={()=>{
+                axios.get('http://172.16.6.42:8090/write')
+                .then((data)=>{})
+                .catch(()=>{})
+            }}></button>
+
             {
                 list.map((a, i)=>{
                     return(

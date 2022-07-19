@@ -91,6 +91,7 @@ let Register_Button = styled.button`
     outline: 0;
     background-color: #D1CBE4;
     color: white;
+    font-weight: bold;
 
     &:hover{  
         background-color : #A8A0C0;
