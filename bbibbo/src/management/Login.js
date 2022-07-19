@@ -38,6 +38,7 @@ let Login_Input = styled.input`
     height: 43px;
     margin-bottom: 20px;
     border-radius: 15px;
+    padding-left: 13px;
     font-size: 13px;
     outline: 0;
     border-right: #E8E1F3 2px solid;
@@ -108,13 +109,13 @@ function Login(){
 
                     <H4_Font>로그인</H4_Font>
 
-                    <Login_Input placeholder="     ID입력" onChange={(e)=>{
+                    <Login_Input placeholder="  ID입력" onChange={(e)=>{
                         setId(e.target.value)
                     }}></Login_Input>
 
                     <br/>
 
-                    <Login_Input placeholder="     PASSWORD입력" onChange={(e)=>{
+                    <Login_Input placeholder="  PASSWORD입력" onChange={(e)=>{
                         setPassword(e.target.value)
                     }}></Login_Input>
 

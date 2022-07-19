@@ -40,6 +40,7 @@ let Register_Input = styled.input`
     width: 310px;
     height: 43px;
     margin-bottom: 10px;
+    padding-left: 13px;
     border-radius: 15px;
     font-size: 13px;
     outline: 0;
@@ -53,6 +54,7 @@ let Register_Input_CheckPass = styled.input`
     width: 210px;
     height: 43px;
     margin-bottom: 10px;
+    padding-left: 13px;
     border-radius: 15px;
     font-size: 13px;
     outline: 0;
@@ -63,12 +65,12 @@ let Register_Input_CheckPass = styled.input`
 `
 
 let Register_Button_Check = styled.button`
-    width: 76px;
-    height: 43px;
+    width: 75px;
+    height: 40px;
     border-radius: 15px;
     border: 0;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 1px;
     outline: 0;
     background-color: #D1CBE4;
     color: white;
@@ -83,11 +85,11 @@ let Register_Button_Check = styled.button`
 let Register_Button = styled.button`
     width: 215px;
     height: 43px;
-    margin-top: 35px;
+    margin-top: 40px;
     border-radius: 15px;
     border: 0;
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     outline: 0;
     background-color: #D1CBE4;
     color: white;
@@ -105,7 +107,7 @@ let Register_Button = styled.button`
 `
 
 let H4_Font = styled.h4`
-    margin-top: 40px;
+    margin-top: 42px;
     margin-bottom: 30px;
     font-weight: bold;
 `
@@ -162,9 +164,10 @@ function Register(){
 
                 <H4_Font>회원가입</H4_Font>
 
+                <br />
                 
                 <Register_id>ID</Register_id>
-                <Register_Input placeholder="     Email 혹은 전화번호 입력" onChange={(e)=>{
+                <Register_Input placeholder="  Email 혹은 전화번호 입력" onChange={(e)=>{
                     setId(e.target.value)
                 }}></Register_Input>
 
@@ -172,16 +175,13 @@ function Register(){
 
                 
                 <Register_pw>비밀번호</Register_pw>
-                <Register_Input placeholder="     password" onChange={(e)=>{
+                <Register_Input placeholder="  비밀번호 입력" onChange={(e)=>{
                     setPassword(e.target.value)
                 }}></Register_Input>
 
-                <br/>
-
-                <Register_check_pw>비밀번호 확인</Register_check_pw>
 
                 <div className="flex">
-                    <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
+                    <Register_Input_CheckPass placeholder="  비밀번호 확인" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
                     <Register_Button_Check onClick={()=>{setCheck(true)}}>확인</Register_Button_Check>
                 </div>
 

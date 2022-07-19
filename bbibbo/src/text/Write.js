@@ -40,6 +40,7 @@ let Title_Input = styled.input`
     height: 50px;
     margin-top: 10px;
     margin-bottom: 15px;
+    padding-left: 13px;
     border: 0;
     outline: 0;
     font-size: 16px;
@@ -69,6 +70,8 @@ let Title_Input = styled.input`
 let Content_Input = styled.textarea`
     width: 600px;
     height: 500px;
+    padding-left: 13px;
+    padding-top: 12dpx;
     border: 0;
     outline: 0;
     font-size: 16px;
@@ -78,7 +81,7 @@ let Content_Input = styled.textarea`
 
 let FileUpload = styled.input`
     width: 600px;
-    height: 40px;
+    height: 40px; 
     border: 0;
     outline: 0;
     font-size: 16px;
@@ -138,7 +141,7 @@ function Write(){
 
                 {/* <Category placeholder=" 카테고리 ▼"></Category> */}
 
-                <Title_Input placeholder="   제목을 입력하세요" onChange={(e)=>{
+                <Title_Input placeholder=" 제목을 입력하세요." onChange={(e)=>{
                     setTitle(e.target.value)
                 }}></Title_Input>
 
@@ -146,7 +149,7 @@ function Write(){
 
                 <Date></Date> */}
 
-                <Content_Input placeholder="   내용을 입력하세요" onChange={(e)=>{
+                <Content_Input placeholder=" 내용을 입력하세요." onChange={(e)=>{
                     setContent(e.target.value)
                 }}></Content_Input>
 
