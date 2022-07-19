@@ -76,7 +76,7 @@ function Introduction(){
                 </div>
 
                 
-                <Write_Button onClick={()=>{navigate('/write')}}>몽글몽글가기</Write_Button>
+                <Write_Button onClick={()=>{navigate('/list')}}>몽글몽글가기</Write_Button>
 
 
             </Box>
