@@ -41,8 +41,6 @@ function Introduction(){
                 </div>
             </div>
 
-            <div class="box1">
-            </div>
 
         </div>  
     )
