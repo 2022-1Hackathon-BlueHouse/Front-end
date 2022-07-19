@@ -59,7 +59,8 @@
   text-align:left;
   font-size:25px;
   font-weight: bold;
-  box-shadow: 1px 1px 1px 1px gray;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #b7c5e7;
 }
 
 .locate1-2{
