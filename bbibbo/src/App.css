@@ -40,10 +40,11 @@
 
 .head{
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 100px;
   font-size:35px;
   font-weight: bold;
   margin-bottom: 95px;
+  background-color: #b7c5e7;
 }
 
 .btn {
@@ -70,9 +71,4 @@
   width: 100%;
   flex-direction: column;
   align-self: center;
-}
-
-.logout{
-  margin-left: 780px;
-  text-decoration: underline;
 }
