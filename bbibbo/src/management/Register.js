@@ -39,7 +39,7 @@ let Register_Input = styled.input`
     height: 43px;
     margin-bottom: 20px;
     border-radius: 15px;
-    font-size: 17px;
+    font-size: 13px;
     outline: 0;
     border-right: #E8E1F3 2px solid;
     border-left: #E8E1F3 2px solid;
@@ -52,7 +52,7 @@ let Register_Input_CheckPass = styled.input`
     height: 43px;
     margin-bottom: 20px;
     border-radius: 15px;
-    font-size: 17px;
+    font-size: 13px;
     outline: 0;
     border-right: #E8E1F3 2px solid;
     border-left: #E8E1F3 2px solid;
@@ -79,9 +79,9 @@ let Register_Button_Check = styled.button`
 `
 
 let Register_Button = styled.button`
-    width: 325px;
-    height: 43px;
-    margin-top: 25px;
+    width: 215px;
+    height: 47px;
+    margin-top: 35px;
     border-radius: 15px;
     border: 0;
     font-size: 18px;
@@ -102,8 +102,9 @@ let Register_Button = styled.button`
 `
 
 let H4_Font = styled.h4`
-    margin-top: 70px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: bold;
 `
 
 let A = styled.a`
@@ -123,6 +124,17 @@ let True = styled.div`
 let False = styled.div`
     font-size: 15px;
     color: red;
+`
+
+let Register_id =styled.div`
+    margin-right: 280px;
+    font-size: 18px;
+`
+
+let Register_pw =styled.div`
+    margin-right: 200px;
+    margin-bottom: 2px;
+    font-size: 18px;
 `
 
 function Register(){
@@ -146,20 +158,24 @@ function Register(){
 
                     <H4_Font>회원가입</H4_Font>
 
-                    <Register_Input placeholder="  ID" onChange={(e)=>{
+                    
+                    <Register_id>ID</Register_id>
+                    <Register_Input placeholder="       아이디 입력" onChange={(e)=>{
                         setId(e.target.value)
                     }}></Register_Input>
 
                     <br/>
 
-                    <Register_Input placeholder="  PASSWORD" onChange={(e)=>{
+                    
+                    <Register_pw>PASSWORD</Register_pw>
+                    <Register_Input placeholder="       비밀번호 입력" onChange={(e)=>{
                         setPassword(e.target.value)
                     }}></Register_Input>
 
                     <br/>
 
                     <div className="flex">
-                        <Register_Input_CheckPass placeholder="  Check PASSWORD" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
+                        <Register_Input_CheckPass placeholder="       비밀번호 확인" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
                         <Register_Button_Check onClick={()=>{
                             if(password === checkPassword){
                                 <True>비밀번호가 일치합니다</True>
