@@ -19,6 +19,7 @@ let Box = styled.div`
 ` 
 
 let SubBox_Left = styled.div`
+    display: flex;
     width: 425px;
     height: 525px;
     background-color: aliceblue;
@@ -137,7 +138,9 @@ function Register(){
             
             <Box>
 
-                <SubBox_Left></SubBox_Left>
+                <SubBox_Left>
+                    <img className="logoStyle" src="/logo.png"></img>
+                </SubBox_Left>
 
                 <SubBox_Right>
 

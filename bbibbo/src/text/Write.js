@@ -66,7 +66,7 @@ let Title_Input = styled.input`
 //     font-size: 18px;
 // `
 
-let Content_Input = styled.input`
+let Content_Input = styled.textarea`
     width: 600px;
     height: 500px;
     border: 0;

@@ -40,7 +40,7 @@
 
 .head{
   margin: 0 auto;
-  margin-top:35px;
+  margin-top: 50px;
   font-size:35px;
   font-weight: bold;
   margin-bottom: 95px;
@@ -57,6 +57,7 @@
 .locate1{
   text-align:left;
   font-size:25px;
+  font-weight: bold;
 }
 
 .locate1-2{
@@ -65,3 +66,8 @@
 }
 
 
+.logoStyle {
+  width: 100%;
+  flex-direction: column;
+  align-self: center;
+}
