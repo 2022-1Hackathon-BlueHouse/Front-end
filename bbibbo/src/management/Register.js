@@ -152,6 +152,7 @@ function Register(){
     let [id, setId] = useState();
     let [password, setPassword] = useState();
     let [checkPassword, setCheckPassword] = useState();
+    let [check, setCheck] = useState(false);
 
     return(
         <div className="App">
@@ -179,24 +180,13 @@ function Register(){
                 <Register_check_pw>비밀번호 확인</Register_check_pw>
 
                 <div className="flex">
-                    <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
-                    <Register_Button_Check onClick={()=>{
-                        if (password === checkPassword){
-                            <True>비밀번호가 일치합니다</True>
-                        }
-                        else{
-                            <False>비밀번호가 일치하지 않습니다</False>
-                        }
-                        // {
-                        //     password != "" && checkPassword != "" ? 
-                        //     password === checkPassword ? <True>비밀번호가 일치합니다</True> : <False>비밀번호가 일치하지 않습니다</False>
-                        //     : null
-                        // }
-                    }}>확인</Register_Button_Check>
+                    <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value);console.log(checkPassword);}}></Register_Input_CheckPass>
+                    <Register_Button_Check onClick={()=>{setCheck(true)}}>확인</Register_Button_Check>
+                    { password === checkPassword ? <True>비밀번호가 일치합니다</True> : <False>비밀번호가 일치하지 않습니다</False> }
                 </div>
 
                 <Register_Button onClick={()=>{
-                    axios.post('http://172.16.6.42:8090/',{username : id, password : password})
+                    axios.post('http://172.16.6.42:8090/register',{username : id, password : password})
                     .then((result)=>{})
                     .catch(()=>{})
                 }}>회원가입</Register_Button>
