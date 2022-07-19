@@ -117,7 +117,7 @@ function Login(){
                     <br/>
 
                     <Login_Button onClick={()=>{
-                        axios.post('',{username : id, password : password})
+                        axios.post('http://172.16.6.42:8090/',{username : id, password : password})
                         .then((result)=>{})
                         .catch(()=>{})
                     }}>로그인</Login_Button>
