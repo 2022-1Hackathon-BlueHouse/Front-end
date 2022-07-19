@@ -20,8 +20,8 @@ function makeArrayWithSize(size) {
 function List({setIndex, setTitle, setContent}) {
 
     useEffect(() => {
-        console.log(list)
-    })
+        loadPage(1)
+    }, [])
 
     let navigate = useNavigate();
 
@@ -30,6 +30,12 @@ function List({setIndex, setTitle, setContent}) {
     let [pageSize, setPageSize] = useState(1);
 
     let [detailNum, setDetailNum] = useState();
+
+    let loadPage = (page) => {
+        axios.get(`http://172.16.6.42:8090/board/list?page=${page}`)
+                                            .then((data) => {setPageSize(data.data.endPage); setList(data.data.list.content); })
+                                            .catch(() => { })
+    }
 
     return (
         <div className="App">
@@ -73,9 +79,7 @@ function List({setIndex, setTitle, setContent}) {
                             makeArrayWithSize(pageSize).map((item, index) => {
                                 return (
                                     <Button onClick={() => {
-                                        axios.get(`http://172.16.6.42:8090/board/list?page=${index + 1}`)
-                                            .then((data) => {setPageSize(data.data.endPage); setList(data.data.list.content); })
-                                            .catch(() => { })
+                                        loadPage(index + 1)
                                     }} className='list_button'>{index + 1}</Button>
                                 )
                             })
