@@ -5,7 +5,7 @@ import "./App.css";
 
 function Introduction(){
     return(
-        <div class="chang">
+        <div class>
             <div class="head">몽글몽글 소개</div>
 
             <div>
@@ -41,8 +41,6 @@ function Introduction(){
                 </div>
             </div>
 
-            <div class="box1">
-            </div>
 
         </div>  
     )
