@@ -80,8 +80,9 @@ let Div = styled.div`
 `
 
 let H4_Font = styled.h4`
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 13px;
+    margin-bottom: 40px;
+    font-weight: bold;
 `
 
 function Login(){
@@ -97,10 +98,12 @@ function Login(){
             <Box>
 
                 <SubBox_Left>
-                    <img className="logoStyle" src="/logo.png"></img>
+
                 </SubBox_Left>
 
                 <SubBox_Right>
+
+                    <img className="miniLogoStyle" src="/logo.png"></img>
 
                     <H4_Font>로그인</H4_Font>
 
