@@ -39,7 +39,7 @@ function Introduction(){
         <div>
 
             <Box>
-                <div className="head">몽글몽글 소개</div>
+                <div className="head">몽글몽글 안내</div>
 
                 <div>
                     <p className="btn">✔</p>
