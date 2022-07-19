@@ -20,8 +20,6 @@ function List(){
 
     return(
         <div className="App">
-
-            <Write_Button onClick={()=>{navigate('/write')}}>글 쓰기</Write_Button>
             
             <br/>
 
