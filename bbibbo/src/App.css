@@ -73,6 +73,12 @@
   align-self: center;
 }
 
+.miniLogoStyle {
+  width: 60%;
+  flex-direction: column;
+  align-self: center;
+}
+
 .logout{
   margin-left: 780px;
   text-decoration: underline;

@@ -97,10 +97,12 @@ function Login(){
             <Box>
 
                 <SubBox_Left>
-                    <img className="logoStyle" src="/logo.png"></img>
+
                 </SubBox_Left>
 
                 <SubBox_Right>
+
+                    <img className="miniLogoStyle" src="/logo.png"></img>
 
                     <H4_Font>로그인</H4_Font>
 
