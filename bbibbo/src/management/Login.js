@@ -122,10 +122,10 @@ function Login(){
                     <br/>
 
                     <Login_Button onClick={()=>{
-                        axios.post('http://172.16.6.42:8090/login',JSON.stringify({username : id, password : password}), {headers: {
+                        axios.post('http://172.16.6.42:8090/auth/login',JSON.stringify({username : id, password : password}), {headers: {
                             'content-type':'application/json'
                         }})
-                        .then((result)=>{})
+                        .then((result)=>{navigate('/introduction')})
                         .catch(()=>{})
                     }}>로그인</Login_Button>
 

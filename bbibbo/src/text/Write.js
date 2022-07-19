@@ -159,7 +159,7 @@ function Write(){
 
                 <Write_Button onClick={()=>{
                     axios.post('http://172.16.6.42:8090/board/write',{title : title, content : content})
-                    .then((result)=>{})
+                    .then((result)=>{'/list'})
                     .catch(()=>{})
                 }}>업로드</Write_Button>
 
