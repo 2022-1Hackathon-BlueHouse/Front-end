@@ -98,7 +98,7 @@ function Login(){
             <Box>
 
                 <SubBox_Left>
-                    
+                    <img src="/loginpic.jpg" className="loginpic"></img>
                 </SubBox_Left>
 
                 <SubBox_Right>
