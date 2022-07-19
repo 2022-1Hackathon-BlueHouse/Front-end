@@ -7,6 +7,7 @@ import Write from './text/Write.js';
 import Category from './Category.js';
 import List from './List.js';
 import Introduction from './Introduction.js';
+import DetailPage from './text/DetailPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/write" element={ <Write></Write> } /> 
         <Route path="/introduction" element={ <Introduction></Introduction> } />
         <Route path="/list" element={ <List></List> } />
+        <Route path="/detailpage" element={ <DetailPage></DetailPage> } />
       </Routes>
 
     </div>

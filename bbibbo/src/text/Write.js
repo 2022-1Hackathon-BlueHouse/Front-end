@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import '../App.css';
 
@@ -27,9 +28,11 @@ let Category = styled.input`
     font-size: 16px;
     background-color: #F6F6F6;
     border: 1px solid #E8E1F3;
+
     &::placeholder {
         color: black;
     }
+
 `
 
 let Title_Input = styled.input`
@@ -126,6 +129,8 @@ function Write(){
     let [title, setTitle] = useState();
     let [content, setContent] = useState();
 
+    let navigate = useNavigate();
+
     return(
         <div className="App">
             <Box>
@@ -146,10 +151,10 @@ function Write(){
 
                 <FileUpload placeholder=" 파일 업로드"></FileUpload>
 
-                <Cancel_Button>취소</Cancel_Button>
+                <Cancel_Button onClick={()=>{navigate(-1)}}>취소</Cancel_Button>
 
                 <Write_Button onClick={()=>{
-                    axios.post('',{asdf : title, qwer : content})
+                    axios.post('http://172.16.6.42:8090/board/write',{title : title, content : content})
                     .then((result)=>{})
                     .catch(()=>{})
                 }}>업로드</Write_Button>

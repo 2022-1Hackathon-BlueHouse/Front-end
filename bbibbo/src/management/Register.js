@@ -173,7 +173,7 @@ function Register(){
                     </div>
 
                     <Register_Button onClick={()=>{
-                        axios.post('',{asfg : id, rwes : password})
+                        axios.post('',{username : id, password : password})
                         .then((result)=>{})
                         .catch(()=>{})
                     }}>회원가입</Register_Button>

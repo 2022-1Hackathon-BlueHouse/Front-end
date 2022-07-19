@@ -113,7 +113,7 @@ function Login(){
                     <br/>
 
                     <Login_Button onClick={()=>{
-                        axios.post('',{asfg : id, rwes : password})
+                        axios.post('',{username : id, password : password})
                         .then((result)=>{})
                         .catch(()=>{})
                     }}>로그인</Login_Button>
