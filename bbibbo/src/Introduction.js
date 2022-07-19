@@ -63,12 +63,12 @@ function Introduction(){
 
                 <div>
                     <p className="btn">✔</p>
-                    <p className="locate1">몽글몽글 청원작성</p>
+                    <p className="locate1">몽글몽글 작성방법</p>
                 </div>
                 
                 <div className="locate1-2">
-                    <p>현재 페이지 상단에 있는 "청원하기"를 클릭하시면 작성하실 수 있고
-                        청원글은 청원을 하시면 작성하신 글들을 볼 수 있습니다.
+                    <p>현재 페이지 상단에 있는 "몽글몽글하기"를 클릭하시면 작성하실 수 있고
+                        "몽글몽글보기"를 클릭하시면 작성하신 글들을 볼 수 있습니다.
                     </p>
                 </div>
 
