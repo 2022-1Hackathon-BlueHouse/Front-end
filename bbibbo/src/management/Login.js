@@ -80,8 +80,8 @@ let Div = styled.div`
 `
 
 let H4_Font = styled.h4`
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 13px;
+    margin-bottom: 40px;
     font-weight: bold;
 `
 
