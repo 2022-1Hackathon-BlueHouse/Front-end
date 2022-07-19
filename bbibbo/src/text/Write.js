@@ -37,7 +37,7 @@ let Box = styled.div`
 
 let Title_Input = styled.input`
     width: 600px;
-    height: 40px;
+    height: 50px;
     margin-top: 10px;
     margin-bottom: 15px;
     border: 0;
@@ -107,13 +107,13 @@ let Write_Button = styled.button`
 `
 
 let Cancel_Button = styled.button`
-    width: 150px;
+    width: 130px;
     height: 40px;
     border: 0;
     border-radius: 10px;
     font-size: 17px;
     margin-top: 30px;
-    margin-right: 305px;
+    margin-right: 325px;
     background-color: #D1CBE4;
     color: white;
     &:hover{  
@@ -138,7 +138,7 @@ function Write(){
 
                 {/* <Category placeholder=" 카테고리 ▼"></Category> */}
 
-                <Title_Input placeholder=" 제목을 입력하세요" onChange={(e)=>{
+                <Title_Input placeholder="   제목을 입력하세요" onChange={(e)=>{
                     setTitle(e.target.value)
                 }}></Title_Input>
 
@@ -146,7 +146,7 @@ function Write(){
 
                 <Date></Date> */}
 
-                <Content_Input placeholder=" 내용을 입력하세요" onChange={(e)=>{
+                <Content_Input placeholder="   내용을 입력하세요" onChange={(e)=>{
                     setContent(e.target.value)
                 }}></Content_Input>
 
