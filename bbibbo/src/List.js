@@ -25,7 +25,7 @@ function List(){
             <table className="table_title">
                 <thead>
                     <tr>
-                        <th>번호</th>
+                        <th style={{width: '110px'}}>번호</th>
                         <th>제목</th>
                         <th>날짜</th>
                     </tr>
@@ -39,7 +39,7 @@ function List(){
                             <table className="table_content">
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
+                                        <td style={{width: '110px'}}>1</td>
                                         <td>제목</td>
                                         <td>날짜</td>
                                     </tr>

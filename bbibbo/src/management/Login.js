@@ -34,11 +34,11 @@ let SubBox_Right = styled.div`
 `
 
 let Login_Input = styled.input`
-    width: 325px;
+    width: 310px;
     height: 43px;
     margin-bottom: 20px;
     border-radius: 15px;
-    font-size: 17px;
+    font-size: 13px;
     outline: 0;
     border-right: #E8E1F3 2px solid;
     border-left: #E8E1F3 2px solid;
@@ -47,7 +47,7 @@ let Login_Input = styled.input`
 `
 
 let Login_Button = styled.button`
-    width: 325px;
+    width: 216px;
     height: 43px;
     margin-top: 25px;
     border-radius: 15px;
@@ -107,20 +107,20 @@ function Login(){
 
                     <H4_Font>로그인</H4_Font>
 
-                    <Login_Input placeholder="  ID" onChange={(e)=>{
+                    <Login_Input placeholder="     ID입력" onChange={(e)=>{
                         setId(e.target.value)
                     }}></Login_Input>
 
                     <br/>
 
-                    <Login_Input placeholder="  PASSWORD" onChange={(e)=>{
+                    <Login_Input placeholder="     PASSWORD입력" onChange={(e)=>{
                         setPassword(e.target.value)
                     }}></Login_Input>
 
                     <br/>
 
                     <Login_Button onClick={()=>{
-                        axios.post('http://172.16.6.42:8090/',{username : id, password : password})
+                        axios.post('http://172.16.6.42:8090/login',{username : id, password : password})
                         .then((result)=>{})
                         .catch(()=>{})
                     }}>로그인</Login_Button>
@@ -128,7 +128,7 @@ function Login(){
                     <br/>
                     
                     <div className="flex">
-                        <Div>회원가입을 아직 안 하셨나요?</Div>
+                        <Div>회원이 아니신가요?</Div>
                         <A href="./register">회원가입</A>
                     </div>
                     

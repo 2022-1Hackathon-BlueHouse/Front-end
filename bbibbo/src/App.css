@@ -59,13 +59,13 @@
   text-align:left;
   font-size:25px;
   font-weight: bold;
+  box-shadow: 1px 1px 1px 1px gray;
 }
 
 .locate1-2{
   text-align: left;
   margin-bottom: 90px;
 }
-
 
 .logoStyle {
   width: 100%;
@@ -78,7 +78,7 @@
   flex-direction: column;
   align-self: center;
 }
-
+:only-child
 .logout{
   margin-left: 780px;
   text-decoration: underline;
