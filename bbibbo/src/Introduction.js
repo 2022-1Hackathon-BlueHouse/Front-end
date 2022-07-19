@@ -51,16 +51,6 @@ function Introduction(){
                     또한 몽글몽글은 익명과 실명을 쓸 수 있어서 개인정보를 지킬 수 있습니다.</p>
                 </div>
 
-
-                <div>
-                    <p className="btn">✔</p>
-                    <p className="locate1">주의사항</p>
-                </div>
-
-                <div className="locate1-2">
-                    <p>다른 사용자가 쓴 글을 허락없이 퍼가거나 부적절한 행동시 관련법률 및 운영정책에 의해 제재 받을 수 있습니다. </p>
-                </div>
-
                 <div>
                     <p className="btn">✔</p>
                     <p className="locate1">몽글몽글 작성방법</p>
@@ -72,6 +62,15 @@ function Introduction(){
                     </p>
                 </div>
 
+                <div>
+                    <p className="btn">✔</p>
+                    <p className="locate1">주의사항</p>
+                </div>
+
+                <div className="locate1-2">
+                    <p>다른 사용자가 쓴 글을 허락없이 퍼가거나 부적절한 행동시 관련법률 및 운영정책에 의해 제재 받을 수 있습니다. </p>
+                </div>
+                
                 <Write_Button onClick={()=>{navigate('/write')}}>몽글몽글하기</Write_Button>
 
             </Box>
