@@ -19,7 +19,7 @@ function List(){
 
     return(
         <div className="App">
-            
+
             <br/>
 
             <table className="table_title">
