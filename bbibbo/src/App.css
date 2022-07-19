@@ -78,3 +78,8 @@
   cursor:pointer;
 }
 
+.logoStyle {
+  width: 100%;
+  flex-direction: column;
+  align-self: center;
+}
