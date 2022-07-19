@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 import "./App.css";
+
 
 let Box = styled.div`
     width: 1200px;
@@ -9,7 +12,29 @@ let Box = styled.div`
     margin-left: auto;
 `
 
+let Write_Button = styled.button`
+    width: 200px;
+    height: 60px;
+    background-color: #b7c5e7;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: large;
+
+    &:hover{  
+        background-color: #7394e0;
+    }
+
+    &:focus{  
+        
+    }
+`
+
 function Introduction(){
+
+    let navigate = useNavigate();
+
     return(
         <div>
             <Box>
@@ -47,6 +72,9 @@ function Introduction(){
                         </p>
                     </div>
                 </div>
+
+                <Write_Button onClick={()=>{navigate('/write')}}>몽글몽글하기</Write_Button>
+
             </Box>
             
         </div>  
