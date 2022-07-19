@@ -72,9 +72,7 @@ function Introduction(){
                 </div>
 
                 <div className="locate1-2">
-                    <p>
-                        다른 사용자가 쓴 글을 허락없이 퍼가거나 부적절한 행동시 관련법률 및 운영정책에 의해 제재 받을 수 있습니다.
-                    </p>
+                    <p>다른 사용자가 쓴 글을 허락없이 퍼가거나 부적절한 행동시 관련법률 및 운영정책에 의해 제재 받을 수 있습니다. </p>
                 </div>
 
                 <Write_Button onClick={()=>{navigate('/write')}}>몽글몽글하기</Write_Button>
