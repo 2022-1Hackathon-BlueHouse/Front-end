@@ -8,36 +8,38 @@ import '../App.css';
 import Login from './Login.js';
 
 let Box = styled.div`
-    width: 850px;
-    height: 525px;
+    width: 700px;
+    height: 550px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 3px 3px 3px 3px rgb(179, 179, 179);
 ` 
 
-let SubBox_Left = styled.div`
-    display: flex;
-    width: 425px;
-    height: 525px;
-    background-color: aliceblue;
-    border-radius: 10px 0px 0px 10px;
-`
+// let SubBox_Left = styled.div`
+//     display: flex;
+//     width: 425px;
+//     height: 525px;
+//     background-color: aliceblue;
+//     border-radius: 10px 0px 0px 10px;
+// `
 
-let SubBox_Right = styled.div`
-    background-image: url('../logo.jpg');
-    width: 425px;
-    height: 525px;
-    background-color: white;
-    border-radius: 0px 10px 10px 0px;
-`
+// let SubBox_Right = styled.div`
+//     background-image: url('../logo.jpg');
+//     width: 425px;
+//     height: 525px;
+//     background-color: white;
+//     border-radius: 0px 10px 10px 0px;
+// `
 
 let Register_Input = styled.input`
-    width: 325px;
+    width: 310px;
     height: 43px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 15px;
     font-size: 13px;
     outline: 0;
@@ -48,9 +50,9 @@ let Register_Input = styled.input`
 `
 
 let Register_Input_CheckPass = styled.input`
-    width: 220px;
+    width: 210px;
     height: 43px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 15px;
     font-size: 13px;
     outline: 0;
@@ -61,12 +63,12 @@ let Register_Input_CheckPass = styled.input`
 `
 
 let Register_Button_Check = styled.button`
-    width: 80px;
+    width: 76px;
     height: 43px;
     border-radius: 15px;
     border: 0;
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     outline: 0;
     background-color: #D1CBE4;
     color: white;
@@ -80,7 +82,7 @@ let Register_Button_Check = styled.button`
 
 let Register_Button = styled.button`
     width: 215px;
-    height: 47px;
+    height: 43px;
     margin-top: 35px;
     border-radius: 15px;
     border: 0;
@@ -128,13 +130,19 @@ let False = styled.div`
 
 let Register_id =styled.div`
     margin-right: 280px;
-    font-size: 18px;
+    font-size: 17px;
 `
 
 let Register_pw =styled.div`
-    margin-right: 200px;
+    margin-right: 230px;
     margin-bottom: 2px;
-    font-size: 18px;
+    font-size: 17px;
+`
+
+let Register_check_pw =styled.div`
+    margin-right: 185px;
+    margin-bottom: 2px;
+    font-size: 17px;
 `
 
 function Register(){
@@ -150,61 +158,56 @@ function Register(){
             
             <Box>
 
-                <SubBox_Left>
-                    <img className="logoStyle" src="/logo.png"></img>
-                </SubBox_Left>
+                <H4_Font>회원가입</H4_Font>
 
-                <SubBox_Right>
+                
+                <Register_id>ID</Register_id>
+                <Register_Input placeholder="     Email 혹은 전화번호 입력" onChange={(e)=>{
+                    setId(e.target.value)
+                }}></Register_Input>
 
-                    <H4_Font>회원가입</H4_Font>
+                <br/>
 
-                    
-                    <Register_id>ID</Register_id>
-                    <Register_Input placeholder="       아이디 입력" onChange={(e)=>{
-                        setId(e.target.value)
-                    }}></Register_Input>
+                
+                <Register_pw>비밀번호</Register_pw>
+                <Register_Input placeholder="     password" onChange={(e)=>{
+                    setPassword(e.target.value)
+                }}></Register_Input>
 
-                    <br/>
+                <br/>
 
-                    
-                    <Register_pw>PASSWORD</Register_pw>
-                    <Register_Input placeholder="       비밀번호 입력" onChange={(e)=>{
-                        setPassword(e.target.value)
-                    }}></Register_Input>
+                <Register_check_pw>비밀번호 확인</Register_check_pw>
 
-                    <br/>
+                <div className="flex">
+                    <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
+                    <Register_Button_Check onClick={()=>{
+                        if (password === checkPassword){
+                            <True>비밀번호가 일치합니다</True>
+                        }
+                        else{
+                            <False>비밀번호가 일치하지 않습니다</False>
+                        }
+                        // {
+                        //     password != "" && checkPassword != "" ? 
+                        //     password === checkPassword ? <True>비밀번호가 일치합니다</True> : <False>비밀번호가 일치하지 않습니다</False>
+                        //     : null
+                        // }
+                    }}>확인</Register_Button_Check>
+                </div>
 
-                    <div className="flex">
-                        <Register_Input_CheckPass placeholder="       비밀번호 확인" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
-                        <Register_Button_Check onClick={()=>{
-                            if(password === checkPassword){
-                                <True>비밀번호가 일치합니다</True>
-                            }
-                            else{
-                                <False>비밀번호가 일치하지 않습니다</False>
-                            }
-                            // {
-                            //     password != "" && checkPassword != "" ? 
-                            //     password === checkPassword ? <True>비밀번호가 일치합니다</True> : <False>비밀번호가 일치하지 않습니다</False>
-                            //     : null
-                            // }
-                        }}>확인</Register_Button_Check>
-                    </div>
+                <Register_Button onClick={()=>{
+                    axios.post('http://172.16.6.42:8090/',{username : id, password : password})
+                    .then((result)=>{})
+                    .catch(()=>{})
+                }}>회원가입</Register_Button>
 
-                    <Register_Button onClick={()=>{
-                        axios.post('http://172.16.6.42:8090/',{username : id, password : password})
-                        .then((result)=>{})
-                        .catch(()=>{})
-                    }}>회원가입</Register_Button>
+                <br/>
 
-                    <br/>
+                <div className="flex">
+                    <Div>이미 회원이신가요?</Div>
+                    <A href="./login">로그인</A>
+                </div>
 
-                    <div className="flex">
-                        <Div>이미 회원이신가요?</Div>
-                        <A href="./login">로그인</A>
-                    </div>
-
-                </SubBox_Right>
 
             </Box>
 
