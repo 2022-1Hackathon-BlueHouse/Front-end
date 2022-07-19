@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
 
+import '../App.css';
+
 let Box = styled.div`
     width : 700px;
     height: 800px;
@@ -11,14 +13,13 @@ let Box = styled.div`
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 20px;
 `
 
 let Title = styled.input`
     width: 600px;
     height: 40px;
-    margin-top: 10px;
     margin-bottom: 15px;
     border: 0;
     outline: 0;
@@ -81,6 +82,12 @@ let Update_Button = styled.button`
     } */
 `
 
+let Emoji = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+`
+
 function DetailPage({index, title, content}){
 
     useEffect(() => {
@@ -88,6 +95,9 @@ function DetailPage({index, title, content}){
     }, [index, title, content])
 
     let navigate = useNavigate();
+
+    let [like, setLike] = useState(0);
+    let [dislike, setDislike] = useState(0);
 
     return(
         <div>
@@ -101,6 +111,30 @@ function DetailPage({index, title, content}){
                 <Date value="작성일 : 2022-07-19" readonly ></Date>
 
                 <Update_Button onClick={()=>{navigate('/updatepage')}}>수정하기</Update_Button>
+
+                <br/>
+
+                <Emoji>
+                    <img src="/like.png" className="like" onClick={()=>{
+                        {setLike(like+1)}
+                        axios.post('',{asdf:like, aags:dislike})
+                        .then(()=>{})
+                        .catch(()=>{})
+                    }}></img>
+                    <img src="/dislike.png" className="dislike" onClick={()=>{
+                        {setDislike(dislike+1)}
+                        axios.post('',{asdf:like, aags:dislike})
+                        .then(()=>{})
+                        .catch(()=>{})
+                    }}></img>
+                </Emoji>
+                
+                <Emoji>
+                    <div className="like_num">{like}</div>
+                    <div className="dislike_num">{dislike}</div>
+                </Emoji>
+                
+
             </Box>
         </div>
     )
