@@ -9,7 +9,6 @@ let Box = styled.div`
     width : 700px;
     height: 800px;
     /* border: 4px solid antiquewhite; */
-    background-color: #F4EFFC;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -17,46 +16,73 @@ let Box = styled.div`
     padding: 20px;
 `
 
+let Category = styled.input`
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    background-color: #F6F6F6;
+    border: 1px solid #E8E1F3;
+    &::placeholder {
+        color: black;
+    }
+`
+
 let Title_Input = styled.input`
-    width: 600px;
+    width: 485px;
     height: 40px;
     margin-top: 10px;
     margin-bottom: 15px;
     border: 0;
-    border-radius: 10px;
     outline: 0;
-    font-size: 18px;
+    font-size: 16px;
+    background-color: #F6F6F6;
+    border: 1px solid #E8E1F3;
 `
 
-let Name = styled.input`
-    width: 290px;
-    height: 40px;
-    margin-bottom: 15px;
-    border: 0;
-    border-radius: 10px;
-    outline: 0;
-    font-size: 18px;
-    margin-right: 17px;
-`
+// let Name = styled.input`
+//     width: 290px;
+//     height: 40px;
+//     margin-bottom: 15px;
+//     border: 0;
+//     outline: 0;
+//     font-size: 18px;
+//     margin-right: 17px;
+// `
 
-let Date = styled.input`
-    width: 290px;
-    height: 40px;
-    margin-bottom: 15px;
-    border: 0;
-    border-radius: 10px;
-    outline: 0;
-    font-size: 18px;
-`
+// let Date = styled.input`
+//     width: 290px;
+//     height: 40px;
+//     margin-bottom: 15px;
+//     border: 0;
+//     outline: 0;
+//     font-size: 18px;
+// `
 
 let Content_Input = styled.input`
     width: 600px;
-    height: 600px;
+    height: 500px;
     border: 0;
-    border-radius: 10px;
     outline: 0;
-    font-size: 17px;
+    font-size: 16px;
+    background-color: #F6F6F6;
+    border: 1px solid #E8E1F3;
 ` 
+
+let FileUpload = styled.input`
+    width: 600px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    background-color: #F6F6F6;
+    margin-top: 20px;
+    border: 1px solid #E8E1F3;
+`
 
 let Write_Button = styled.button`
     width: 150px;
@@ -104,17 +130,21 @@ function Write(){
         <div className="App">
             <Box>
 
-                <Title_Input placeholder="제목" onChange={(e)=>{
+                <Category placeholder=" 카테고리 ▼"></Category>
+
+                <Title_Input placeholder=" 제목을 입력하세요" onChange={(e)=>{
                     setTitle(e.target.value)
                 }}></Title_Input>
 
-                <Name></Name>
+                {/* <Name></Name>
 
-                <Date></Date>
+                <Date></Date> */}
 
-                <Content_Input placeholder="글" onChange={(e)=>{
+                <Content_Input placeholder=" 내용을 입력하세요" onChange={(e)=>{
                     setContent(e.target.value)
                 }}></Content_Input>
+
+                <FileUpload placeholder=" 파일 업로드"></FileUpload>
 
                 <Cancel_Button>취소</Cancel_Button>
 
@@ -122,7 +152,7 @@ function Write(){
                     axios.post('',{asdf : title, qwer : content})
                     .then((result)=>{})
                     .catch(()=>{})
-                }}>청원하기</Write_Button>
+                }}>업로드</Write_Button>
 
             </Box>
         </div>
