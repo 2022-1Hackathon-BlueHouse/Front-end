@@ -121,7 +121,7 @@
 }
 
 .table_area {
-  flex:1;
+  flex: 1;
 }
 
 .table_feed {
@@ -134,6 +134,7 @@
 
 .table_title{
   margin-bottom: 30px;
+  margin-top: 70px;
 }
 
 .list_hover{

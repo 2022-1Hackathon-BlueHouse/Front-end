@@ -71,7 +71,7 @@ let Content_Input = styled.textarea`
     width: 600px;
     height: 500px;
     padding-left: 13px;
-    padding-top: 12dpx;
+    padding-top: 12px;
     border: 0;
     outline: 0;
     font-size: 16px;

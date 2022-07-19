@@ -1,5 +1,6 @@
 import './App.css';
 import {Route, Routes, Link} from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import Login from './management/Login.js';
 import Register from './management/Register.js';
@@ -7,8 +8,10 @@ import Write from './text/Write.js';
 import Category from './Category.js';
 import List from './List.js';
 import Introduction from './Introduction.js';
-import DetailPage from './text/DetailPage';
-import { useEffect, useState } from 'react';
+import DetailPage from './text/DetailPage.js';
+import UpdatePage from './text/UpdatePage.js';
+
+
 
 function App() { 
 
@@ -32,6 +35,7 @@ function App() {
         <Route path="/introduction" element={ <Introduction></Introduction> } />
         <Route path="/list" element={ <List setIndex={setIndex} setTitle={setTitle} setContent={setContent}></List> } />
         <Route path="/detailpage" element={ <DetailPage index={index} title={title} content={content}></DetailPage> } />
+        <Route path="/updatepage" element={ <UpdatePage index={index} title={title} content={content}></UpdatePage> } />
       </Routes>
 
     </div>

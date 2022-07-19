@@ -44,7 +44,7 @@ let Name = styled.input`
     margin-bottom: 15px;
     border: 0;
     outline: 0;
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 20px;
     background-color: #F6F6F6;
     border: 1px solid #E8E1F3;
@@ -56,15 +56,38 @@ let Date = styled.input`
     margin-bottom: 15px;
     border: 0;
     outline: 0;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #F6F6F6;
     border: 1px solid #E8E1F3;
 `
 
+let Update_Button = styled.button`
+    width: 600px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+    background-color: #D1CBE4;
+    margin-top: 10px;
+
+    &:hover{  
+        background-color : #A8A0C0;
+        color: white;
+    }
+
+    /* &:focus{  
+        background-color : ;
+        color: white;
+    } */
+`
+
 function DetailPage({index, title, content}){
+
     useEffect(() => {
         console.log(index + " " + title + " " + content);
     }, [index, title, content])
+
+    let navigate = useNavigate();
 
     return(
         <div>
@@ -75,7 +98,9 @@ function DetailPage({index, title, content}){
 
                 <Name value={index} readonly ></Name>
                 
-                <Date value="2022-7-19" readonly ></Date>
+                <Date value="작성일 : 2022-07-19" readonly ></Date>
+
+                <Update_Button onClick={()=>{navigate('/updatepage')}}>수정하기</Update_Button>
             </Box>
         </div>
     )
