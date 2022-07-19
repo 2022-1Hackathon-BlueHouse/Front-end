@@ -9,7 +9,7 @@ import Login from './Login.js';
 
 let Box = styled.div`
     width: 700px;
-    height: 550px;
+    height: 570px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -180,10 +180,15 @@ function Register(){
                 <Register_check_pw>비밀번호 확인</Register_check_pw>
 
                 <div className="flex">
-                    <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value);console.log(checkPassword);}}></Register_Input_CheckPass>
+                    <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
                     <Register_Button_Check onClick={()=>{setCheck(true)}}>확인</Register_Button_Check>
-                    { password === checkPassword ? <True>비밀번호가 일치합니다</True> : <False>비밀번호가 일치하지 않습니다</False> }
                 </div>
+
+                {
+                    check === true ? password != "" && checkPassword != "" ? 
+                    password === checkPassword ? <True>비밀번호가 일치합니다</True> : <False>*비밀번호가 일치하지 않습니다*</False>
+                    : null : null
+                } 
 
                 <Register_Button onClick={()=>{
                     axios.post('http://172.16.6.42:8090/register',{username : id, password : password})
