@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -61,17 +61,21 @@ let Date = styled.input`
     border: 1px solid #E8E1F3;
 `
 
-function DetailPage(){
+function DetailPage({index, title, content}){
+    useEffect(() => {
+        console.log(index + " " + title + " " + content);
+    }, [index, title, content])
+
     return(
         <div>
             <Box>
-                <Title></Title>
+                <Title value={title} readonly ></Title>
 
-                <Content></Content>
+                <Content value={content} readonly ></Content>
 
-                <Name></Name>
+                <Name value={index} readonly ></Name>
                 
-                <Date></Date>
+                <Date value="2022-7-19" readonly ></Date>
             </Box>
         </div>
     )
