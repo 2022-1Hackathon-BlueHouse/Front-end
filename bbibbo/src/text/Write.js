@@ -17,26 +17,26 @@ let Box = styled.div`
     padding: 20px;
 `
 
-let Category = styled.input`
-    width: 100px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    margin-right: 15px;
-    border: 0;
-    outline: 0;
-    font-size: 16px;
-    background-color: #F6F6F6;
-    border: 1px solid #E8E1F3;
+// let Category = styled.input`
+//     width: 100px;
+//     height: 40px;
+//     margin-top: 10px;
+//     margin-bottom: 15px;
+//     margin-right: 15px;
+//     border: 0;
+//     outline: 0;
+//     font-size: 16px;
+//     background-color: #F6F6F6;
+//     border: 1px solid #E8E1F3;
 
-    &::placeholder {
-        color: black;
-    }
+//     &::placeholder {
+//         color: black;
+//     }
 
-`
+// `
 
 let Title_Input = styled.input`
-    width: 485px;
+    width: 600px;
     height: 40px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -85,6 +85,7 @@ let FileUpload = styled.input`
     background-color: #F6F6F6;
     margin-top: 20px;
     border: 1px solid #E8E1F3;
+    padding-top: 4px;
 `
 
 let Write_Button = styled.button`
@@ -135,7 +136,7 @@ function Write(){
         <div className="App">
             <Box>
 
-                <Category placeholder=" 카테고리 ▼"></Category>
+                {/* <Category placeholder=" 카테고리 ▼"></Category> */}
 
                 <Title_Input placeholder=" 제목을 입력하세요" onChange={(e)=>{
                     setTitle(e.target.value)
@@ -149,7 +150,7 @@ function Write(){
                     setContent(e.target.value)
                 }}></Content_Input>
 
-                <FileUpload placeholder=" 파일 업로드"></FileUpload>
+                <FileUpload placeholder=" 파일 업로드" type='file'></FileUpload>
 
                 <Cancel_Button onClick={()=>{navigate(-1)}}>취소</Cancel_Button>
 
