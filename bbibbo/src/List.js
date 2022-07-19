@@ -9,7 +9,7 @@ import './App.css';
 let Write_Button = styled.button`
 width: 200px;
 height: 50px;
-background-color: #b7c5e7;
+background-color: #E8E1F3;
 border: 0;
 outline: 0;
 margin-top: 30px;
@@ -18,7 +18,7 @@ font-weight: bold;
 font-size: large;
 
 &:hover{  
-    background-color: #7394e0;
+    background-color: #eacef6;
 }
 
 &:focus{  
