@@ -40,10 +40,11 @@
 
 .head{
   margin: 0 auto;
-  margin-top:35px;
+  margin-top: 100px;
   font-size:35px;
   font-weight: bold;
   margin-bottom: 95px;
+  background-color: #dad4eb;
 }
 
 .btn {
@@ -57,6 +58,7 @@
 .locate1{
   text-align:left;
   font-size:25px;
+  font-weight: bold;
 }
 
 .locate1-2{
