@@ -63,7 +63,7 @@ let Register_Input_CheckPass = styled.input`
 `
 
 let Register_Button_Check = styled.button`
-    width: 80px;
+    width: 76px;
     height: 43px;
     border-radius: 15px;
     border: 0;
@@ -181,7 +181,7 @@ function Register(){
                 <div className="flex">
                     <Register_Input_CheckPass placeholder="     password" onChange={(e)=>{setCheckPassword(e.target.value)}}></Register_Input_CheckPass>
                     <Register_Button_Check onClick={()=>{
-                        if(password === checkPassword){
+                        if (password === checkPassword){
                             <True>비밀번호가 일치합니다</True>
                         }
                         else{
