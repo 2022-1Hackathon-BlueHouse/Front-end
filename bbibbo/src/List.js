@@ -7,23 +7,8 @@ import axios from 'axios';
 import './App.css';
 
 let Write_Button = styled.button`
-width: 200px;
-height: 50px;
-background-color: #E8E1F3;
-border: 0;
-outline: 0;
-margin-top: 30px;
-border-radius: 15px;
-font-weight: bold;
-font-size: large;
 
-&:hover{  
-    background-color: #eacef6;
-}
 
-&:focus{  
-    
-}
 `
 
 function List(){
