@@ -79,7 +79,7 @@
   flex-direction: column;
   align-self: center;
 }
-:only-child
+
 .logout{
   margin-left: 780px;
   text-decoration: underline;
@@ -134,7 +134,7 @@
 
 .table_title{
   margin-bottom: 30px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .list_hover{

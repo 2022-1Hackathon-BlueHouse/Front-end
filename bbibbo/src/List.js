@@ -3,10 +3,40 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from 'axios';
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup, Button, Form } from 'react-bootstrap';
 
 import './App.css';
+
 import DetailPage from './text/DetailPage';
+
+let Search_Input = styled.input`
+    height: 35px;
+    outline: 0;
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 550px;
+    margin-top: 20px;
+    border-right: 0;
+    border-left: #7A8FC1 2px solid;
+    border-top: #7A8FC1 2px solid;
+    border-bottom: #7A8FC1 3px solid;
+`
+
+let Search_Button = styled.button`
+    height: 35px;
+    border: 0;
+    outline: 0;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+    border-right: #7A8FC1 2px solid;
+    border-left: #7A8FC1 2px solid;
+    border-top: #7A8FC1 2px solid;
+    border-bottom: #7A8FC1 2px solid;
+
+    &:hover{
+        background-color: #7A8FC1;
+    }
+
+`
 
 function makeArrayWithSize(size) {
     let arr = []
@@ -31,6 +61,8 @@ function List({setIndex, setTitle, setContent}) {
 
     let [detailNum, setDetailNum] = useState();
 
+    let [search, setSearch] = useState();
+
     let loadPage = (page) => {
         axios.get(`http://172.16.6.42:8090/board/list?page=${page}`)
                                             .then((data) => {setPageSize(data.data.endPage); setList(data.data.list.content); })
@@ -39,6 +71,15 @@ function List({setIndex, setTitle, setContent}) {
 
     return (
         <div className="App">
+
+            <Search_Input placeholder="  검색하기" onChange={(e)=>{setSearch(e.target.value)}}></Search_Input>
+            
+            <Search_Button onClick={()=>{
+                axios.post('http://172.16.6.42:8090/list',{ searchKeyword : search})
+                .then((result)=>{})
+                .catch(()=>{})
+            }}><div>&#x1F50D;</div></Search_Button>
+        
 
             <div className="full_div flex">
 

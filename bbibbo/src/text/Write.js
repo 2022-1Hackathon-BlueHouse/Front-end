@@ -36,7 +36,7 @@ let Box = styled.div`
 // `
 
 let Title_Input = styled.input`
-    width: 600px;
+    width: 700px;
     height: 50px;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -68,7 +68,7 @@ let Title_Input = styled.input`
 // `
 
 let Content_Input = styled.textarea`
-    width: 600px;
+    width: 700px;
     height: 500px;
     padding-left: 13px;
     padding-top: 12px;
@@ -80,7 +80,7 @@ let Content_Input = styled.textarea`
 ` 
 
 let FileUpload = styled.input`
-    width: 600px;
+    width: 700px;
     height: 40px; 
     border: 0;
     outline: 0;
@@ -116,7 +116,7 @@ let Cancel_Button = styled.button`
     border-radius: 10px;
     font-size: 17px;
     margin-top: 30px;
-    margin-right: 325px;
+    margin-right: 350px;
     background-color: #D1CBE4;
     color: white;
     &:hover{  
