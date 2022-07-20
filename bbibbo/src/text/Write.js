@@ -13,7 +13,6 @@ let Box = styled.div`
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
     padding: 20px;
 `
 
@@ -38,7 +37,7 @@ let Box = styled.div`
 let Title_Input = styled.input`
     width: 700px;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-bottom: 15px;
     padding-left: 13px;
     border: 0;
@@ -98,10 +97,10 @@ let Write_Button = styled.button`
     border-radius: 10px;
     font-size: 17px;
     margin-top: 30px;
-    background-color: #D1CBE4;
+    background-color: #a29ab9;
     color: white;
     &:hover{  
-        background-color: #A8A0C0;
+        background-color: #8379a1;
     }
 
     &:focus{  
@@ -117,10 +116,10 @@ let Cancel_Button = styled.button`
     font-size: 17px;
     margin-top: 30px;
     margin-right: 350px;
-    background-color: #D1CBE4;
+    background-color: #a29ab9;
     color: white;
     &:hover{  
-        background-color: #A8A0C0;
+        background-color: #6c628b;
     }
 
     &:focus{  
@@ -137,33 +136,36 @@ function Write(){
 
     return(
         <div className="App">
-            <Box>
+            <div className="backgroundimg">
+                <Box>
 
-                {/* <Category placeholder=" 카테고리 ▼"></Category> */}
+                    {/* <Category placeholder=" 카테고리 ▼"></Category> */}
 
-                <Title_Input placeholder=" 제목을 입력하세요." onChange={(e)=>{
-                    setTitle(e.target.value)
-                }}></Title_Input>
+                    <Title_Input placeholder=" 제목을 입력하세요." onChange={(e)=>{
+                        setTitle(e.target.value)
+                    }}></Title_Input>
 
-                {/* <Name></Name>
+                    {/* <Name></Name>
 
-                <Date></Date> */}
+                    <Date></Date> */}
 
-                <Content_Input placeholder=" 내용을 입력하세요." onChange={(e)=>{
-                    setContent(e.target.value)
-                }}></Content_Input>
+                    <Content_Input placeholder=" 내용을 입력하세요." onChange={(e)=>{
+                        setContent(e.target.value)
+                    }}></Content_Input>
 
-                <FileUpload placeholder=" 파일 업로드" type='file'></FileUpload>
+                    <FileUpload placeholder=" 파일 업로드" type='file'></FileUpload>
 
-                <Cancel_Button onClick={()=>{navigate(-1)}}>취소</Cancel_Button>
+                    <Cancel_Button onClick={()=>{navigate(-1)}}>취소</Cancel_Button>
 
-                <Write_Button onClick={()=>{
-                    axios.post('http://172.16.6.42:8090/board/write',{title : title, content : content})
-                    .then((result)=>{'/list'})
-                    .catch(()=>{})
-                }}>업로드</Write_Button>
+                    <Write_Button onClick={()=>{
+                        axios.post('http://172.20.10.2:8090/board/write',{title : title, content : content})
+                        .then((result)=>{navigate('/list')})
+                        .catch(()=>{})
+                    }}>업로드</Write_Button>
 
-            </Box>
+                </Box>
+            </div>
+            
         </div>
     )
 }

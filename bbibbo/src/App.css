@@ -94,14 +94,15 @@
 }
 
 .list_button{
-  background-color: #D1CBE4;
+  background-color: #a29ab9;
   border: 0;
   color: white;
 }
 
 .list_button:hover{  
-  background-color : #A8A0C0;
+  background-color : #6c628b;
   color: white;
+  
 }
 
 .list_button:focus{  
@@ -111,7 +112,8 @@
 
 .list_button_margin{
   display: flex;
-  justify-content: center
+  justify-content: center;
+  margin-top: -20px;
 }
 
 .full_div {
@@ -167,4 +169,19 @@
 .dislike_num{
   font-size: 17px;
   margin-left: 60px;
+}
+
+.line{
+  border-bottom: #e3e1ec 4px solid;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 150px;
+}
+
+.backgroundimg{
+  background-image: url( 'https://p0.pikist.com/photos/387/462/clouds-cumulus-cloudy-sky-air-atmosphere.jpg' );
+  background-size: cover;
+  height: 870px;
+  opacity: 0.8;
 }

@@ -7,6 +7,8 @@ import { ButtonGroup, Button, Form } from 'react-bootstrap';
 
 import './App.css';
 
+import config from './config.json'
+
 import DetailPage from './text/DetailPage';
 
 let Search_Input = styled.input`
@@ -64,7 +66,7 @@ function List({setIndex, setTitle, setContent}) {
     let [search, setSearch] = useState();
 
     let loadPage = (page) => {
-        axios.get(`http://172.16.6.42:8090/board/list?page=${page}`)
+        axios.get(`${config.server}/board/list?page=${page}`)
                                             .then((data) => {setPageSize(data.data.endPage); setList(data.data.list.content); })
                                             .catch(() => { })
     }
@@ -72,63 +74,70 @@ function List({setIndex, setTitle, setContent}) {
     return (
         <div className="App">
 
-            <Search_Input placeholder="  검색하기" onChange={(e)=>{setSearch(e.target.value)}}></Search_Input>
+            <div className="backgroundimg">
+
+                <Search_Input placeholder="  검색하기" onChange={(e)=>{setSearch(e.target.value)}}></Search_Input>
+                
+                <Search_Button onClick={()=>{
+                    axios.get(`${config.server}/board/list?query=${search}`)
+                    .then((result)=>{
+                        setPageSize(result.data.endPage); setList(result.data.list.content);
+                    })
+                    .catch(()=>{})
+                }}><div>&#x1F50D;</div></Search_Button>
             
-            <Search_Button onClick={()=>{
-                axios.post('http://172.16.6.42:8090/list',{ searchKeyword : search})
-                .then((result)=>{})
-                .catch(()=>{})
-            }}><div>&#x1F50D;</div></Search_Button>
-        
 
-            <div className="full_div flex">
+                <div className="full_div flex">
 
-                <div className="table_area">
-                    <table className="table_title">
-                        <thead>
-                            <tr>
-                                <th style={{ width: '110px' }}>번호</th>
-                                <th>제목</th>
-                                <th>날짜</th>
-                            </tr>
-                        </thead>
-                    </table>
+                    <div className="table_area">
+                        <table className="table_title">
+                            <thead>
+                                <tr>
+                                    <th style={{ width: '110px' }}>번호</th>
+                                    <th>제목</th>
+                                    <th>날짜</th>
+                                </tr>
+                            </thead>
+                        </table>
 
-                    {
-                        list.map((ele, index) => {
-                            return (
-                                <div>
-                                    <table className="table_content">
-                                        <tbody onClick={()=>{setIndex(ele.idx); setTitle(ele.title); setContent(ele.content); navigate("/detailpage")}} className='list_hover'>
-                                            <tr className="table_feed">
-                                                <td style={{ width: '110px' }}>{ele.idx}</td>
-                                                <td className="table_item">{ele.title}</td>
-                                                <td className="table_item">2022-07-19</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            )
-                        })
-                    }
-
-                </div>
-
-                <div className="list_button_margin">
-                    <ButtonGroup aria-label="Basic example" className="list_button_margin">
                         {
-                            makeArrayWithSize(pageSize).map((item, index) => {
+                            list.map((ele, index) => {
                                 return (
-                                    <Button onClick={() => {
-                                        loadPage(index + 1)
-                                    }} className='list_button'>{index + 1}</Button>
+                                    <div>
+                                        <table className="table_content">
+                                            <tbody onClick={()=>{setIndex(ele.idx); setTitle(ele.title); setContent(ele.content); navigate("/detailpage")}} className='list_hover'>
+                                                <tr className="table_feed">
+                                                    <td style={{ width: '110px' }}>{ele.idx}</td>
+                                                    <td className="table_item">{ele.title}</td>
+                                                    <td className="table_item">2022-07-20</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 )
                             })
                         }
 
-                    </ButtonGroup>
-                </div>
+                    </div>
+                    
+                    <div className="line"></div>
 
+                    <div className="list_button_margin">
+                        <ButtonGroup aria-label="Basic example" className="list_button_margin">
+                            {
+                                makeArrayWithSize(pageSize).map((item, index) => {
+                                    return (
+                                        <Button onClick={() => {
+                                            loadPage(index + 1)
+                                        }} className='list_button'>{index + 1}</Button>
+                                    )
+                                })
+                            }
+
+                        </ButtonGroup>
+                    </div>
+
+                </div>
             </div>
 
         </div>

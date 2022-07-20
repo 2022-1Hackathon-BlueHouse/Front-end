@@ -192,7 +192,7 @@ function Register(){
                 } 
 
                 <Register_Button onClick={()=>{
-                    axios.post('http://172.16.6.42:8090/auth/register',{username : id, password : password})
+                    axios.post('http://172.20.10.2:8090/auth/register',{username : id, password : password})
                     .then((result)=>{navigate('/login')})
                     .catch(()=>{})
                 }}>회원가입</Register_Button>
