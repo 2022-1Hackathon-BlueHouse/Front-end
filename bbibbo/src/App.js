@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <Category></Category>
+      <Category>a</Category>
       <Routes>
         <Route path="/" element={ <Login></Login> } /> 
         <Route path="/register" element={ <Register></Register> } /> 
